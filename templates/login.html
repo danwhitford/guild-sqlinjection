@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class=flashes>
+    {% for message in messages %}
+        <div class="alert alert-danger">
+          {{ message }}
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% endwith %}
+
+<div class="panel panel-default">
+    <div class="panel-body">
+
+    <form method="post">
+        <div class="form-group">
+            <label>
+                Username
+                <input type=text name=username>
+            </label> <br/>
+        </div>
+
+        <div class="form-group">
+            <label>
+                Password
+                <input type=text name=password>
+            </label> <br/>
+        </div>
+
+        <button type="submit" class="btn btn-default">Login</button>
+
+    </form>
+    </div>
+</div>
+</body>
+
+</html>
