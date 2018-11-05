@@ -23,20 +23,23 @@
 
 
 {% for u in user %}
-<h1>{{ u.greeting }}</h1>
-<p>You are logged in as {{ u.username }}</p>
+<div class="panel panel-default">
+    <div class="panel-heading">{{ u.greeting }}</div>
+    <div class="panel-body">
+        <p>You are logged in as {{ u.username }}</p>
 
-<table class="table">
-    <tr>
-        <th>Name</th>
-        <th>Bank Account Number</th>
-    </tr>
-    <tr>
-        <td>{{ u.realname }}</td>
-        <td>{{ u.banknumber }}</td>
-    </tr>
-</table>
-
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>Bank Account Number</th>
+            </tr>
+            <tr>
+                <td>{{ u.realname }}</td>
+                <td>{{ u.banknumber }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
 {% endfor %}
 
 </body>
